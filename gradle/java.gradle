@@ -11,7 +11,8 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
 dependencies {
-    testImplementation 'junit:junit-jupiter:5.11.0'
+//    testImplementation 'junit:junit-jupiter:5.11.0'
+    testImplementation 'junit:junit:4.11.0'
 }
 
 test {
