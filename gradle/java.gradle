@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: "jacoco"
-//apply plugin: "org.sonarqube.gradle.plugin"
+apply plugin: "org.sonarqube"
 
-sourceCompatibility = 17
-targetCompatibility = 17
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 jar.enabled = true
 
