@@ -10,15 +10,14 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
 dependencies {
-//    testCompile 'junit:junit-jupiter:5.11.0'
-    testCompile 'junit:junit:4.9.1'
+    testImplementation 'junit:junit-jupiter:5.11.0'
 }
 
 test {
     workingDir buildDir
 
     jacoco {
-        append = false
+//        append = false
         //destinationFile = file("$buildDir/jacoco/test.exec")
         excludes = ['**/test/**']
     }
@@ -31,9 +30,12 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.enabled true
-        csv.enabled false
-        //xml.destination = file("$buildDir/reports/jacoco/jacocoTestReport.xml")
+        xml {
+            enabled true
+        }
+        csv {
+            enabled false
+        }
         html.destination file("$buildDir/reports/jacoco")
     }
     afterEvaluate {
