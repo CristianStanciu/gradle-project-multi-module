@@ -9,7 +9,7 @@ buildscript {
     }
 }
 
-apply plugin: Class.forName('argelbargel.gradle.plugins.sonarqube.SonarqubeMultiProjectPlugin')
+//apply plugin: Class.forName('argelbargel.gradle.plugins.sonarqube.SonarqubeMultiProjectPlugin')
 
 sonarqube {
     properties {
