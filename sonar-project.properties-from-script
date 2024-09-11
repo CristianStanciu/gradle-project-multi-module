@@ -1,0 +1,4 @@
+sonar.projectKey=XXXX
+sonar.projectVersion=YYYY
+sonar.sources=./common-module/src/main,./extension-module/src/main,./src/main
+sonar.java.binaries=./build/classes/java,./common-module/build/classes/java,./extension-module/build/classes/java
