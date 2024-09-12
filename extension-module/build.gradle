@@ -1,6 +1,8 @@
 apply from: "${rootProject.projectDir}/gradle/java.gradle"
 
 dependencies {
-    compile parent
-    testCompile project(':common-module')
+//    compile parent
+    implementation parent
+//    testCompile project(':common-module')
+    testImplementation project(':common-module')
 }

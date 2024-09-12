@@ -41,13 +41,13 @@ jacocoTestReport {
         html.destination file("$buildDir/reports/jacoco")
     }
     afterEvaluate {
-        classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: '**/test/**')
-        })
-
-        sourceDirectories = files(sourceDirectories.files.collect {
-            fileTree(dir: it, exclude: '**/test/**')
-        })
+//        classDirectories = files(classDirectories.files.collect {
+//            fileTree(dir: it, exclude: '**/test/**')
+//        })
+//        sourceDirectories = files(sourceDirectories.files.collect {
+//            fileTree(dir: it, exclude: '**/test/**')
+//        }
+//    )
     }
 }
 

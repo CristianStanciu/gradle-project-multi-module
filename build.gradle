@@ -17,7 +17,8 @@ apply from: 'gradle/sonarqube-multiproject.gradle'
 evaluationDependsOn('common-module')
 
 dependencies {
-    compile project('common-module')
+//    compile project('common-module')
+    implementation project('common-module')
 }
 
 defaultTasks 'clean', 'sonarqube'
