@@ -1,19 +1,19 @@
-buildscript {
-    repositories {
-        jcenter()
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
+//buildscript {
+//    repositories {
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//    }
+//    dependencies {
+//        classpath "gradle.plugin.argelbargel.gradle.plugins:sonarqube-multiproject-plugin:1.1"
+//    }
+//}
+//
+//apply plugin: "argelbargel.gradle.plugins.sonarqube-multiproject-plugin"
 
-    dependencies {
-        classpath 'gradle.plugin.argelbargel.gradle.plugins:sonarqube-multiproject-plugin:1.1'
-    }
-}
-
-//apply plugin: Class.forName('argelbargel.gradle.plugins.sonarqube.SonarqubeMultiProjectPlugin')
-
-sonarqube {
+sonar {
     properties {
-        property 'sonar.java.source', sourceCompatibility
+        property 'sonar.java.source', java.sourceCompatibility
         property 'sonar.cpd.cross_project', true
         property 'sonar.rootModuleName', 'main'
     }

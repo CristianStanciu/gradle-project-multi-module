@@ -1,24 +1,36 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8"
-    }
+//buildscript {
+//    repositories {
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//    }
+//    dependencies {
+////        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.0.0.2929"
+//        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:5.1.0.4882"
+//
+//    }
+//}
+
+plugins {
+    id 'org.sonarqube' version '5.1.0.4882'
+//    id 'argelbargel.gradle.plugins.sonarqube-multiproject-plugin' version '1.1'
 }
 
 apply plugin: "org.sonarqube"
-
 apply from: 'gradle/java.gradle'
 apply from: 'gradle/sonarqube-multiproject.gradle'
 
 evaluationDependsOn('common-module')
 
 dependencies {
-//    compile project('common-module')
     implementation project('common-module')
 }
 
-defaultTasks 'clean', 'sonarqube'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+defaultTasks 'clean', 'build', 'sonar'
